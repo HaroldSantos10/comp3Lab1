@@ -1,20 +1,20 @@
     <div class= "form-container" >
         
-        <h5 class="text-center">{{ $nombreVista }}</h5>
+        <h5 class="text-center letra-head">{{ $nombreVista }}</h5>
    
-        <label for = "">Nombre</label> 
+        <label class="letra-form" for = "">Nombre</label> 
         <input type="text" name="name" id="name" value="{{ isset($estudiante)?$estudiante->name:'' }}" />
         @error('name')
             <div class= "error-message">{{ $message }} </div>
         @enderror
 
-        <label for="">Edad</label> 
+        <label class="letra-form" for="">Edad</label> 
         <input type="number" name="age" id="age" value="{{ isset($estudiante)?$estudiante->age:'' }}" />
         @error('age')
             <div class= "error-message">{{ $message }} </div>
         @enderror
         
-        <label for = "">Calificación</label> 
+        <label class="letra-form" for = "">Calificación</label> 
         <input type="text" name="nota" id="nota" value="{{ isset($estudiante)?$estudiante->nota:'' }}">
         @error('nota')
             <div class= "error-message">{{ $message }} </div>
@@ -34,7 +34,7 @@
         .error-message{
             color:red
         }
-            
+             
     
     </style>
 
@@ -42,12 +42,15 @@
     
     .form-container {
         max-width: 400px; 
+        position: absolute;
+        top: 20%;
+        left: 40%;
         margin: 0 auto; 
         padding: 20px; 
         border: 1px solid #ddd; 
         border-radius: 5px; 
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-        background-color: #fff; 
+        background-color: rgba(255, 255, 255, 0.5); 
     }
     
 
@@ -64,8 +67,20 @@
         display: block; 
         width: 100%; 
         margin-bottom: 10px; 
+        color: #204f79;
+
     }
     
+    .letra-head{
+        color: #204f79;
+        font-size: 25px;
+    }
+    .letra-form{
+        color: #204f79;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
 
     </style>
 
